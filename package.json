@@ -1,0 +1,9 @@
+{
+  "name": "gas-typescript-starter",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "git@github.com:hisasann/gas-typescript-starter.git",
+  "author": "hisamatsu yoshiyuki <hisasann25@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
