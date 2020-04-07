@@ -1,9 +1,16 @@
 {
   "name": "gas-typescript-starter",
   "version": "0.0.1",
+  "private": true,
   "main": "index.js",
+  "scripts": {
+    "lerna-init": "upbin lerna init"
+  },
   "repository": "git@github.com:hisasann/gas-typescript-starter.git",
   "author": "hisamatsu yoshiyuki <hisasann25@gmail.com>",
   "license": "MIT",
-  "private": true
+  "devDependencies": {
+    "lerna": "^3.20.2",
+    "upbin": "^0.9.2"
+  }
 }
