@@ -99,6 +99,12 @@ $ clasp open
 
 大事なのは、 `appsscript.json` を `dist` に含めていることですね。
 
+## 参考記事
+
+[howdy39/gas-clasp-starter: A starter template for Google Apps Script by clasp](https://github.com/howdy39/gas-clasp-starter)
+
+[GAS のGoogle謹製CLIツール clasp - Qiita](https://qiita.com/HeRo/items/4e65dcc82783b2766c03)
+
 ## Author
 
 - [github/hisasann](https://github.com/hisasann)
