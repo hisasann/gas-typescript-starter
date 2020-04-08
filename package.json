@@ -6,6 +6,9 @@
   "scripts": {
     "lerna-init": "upbin lerna init"
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "repository": "git@github.com:hisasann/gas-typescript-starter.git",
   "author": "hisamatsu yoshiyuki <hisasann25@gmail.com>",
   "license": "MIT",
