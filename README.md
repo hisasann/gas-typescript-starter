@@ -98,3 +98,12 @@ $ clasp open
     └── tsconfig.json
 
 大事なのは、 `appsscript.json` を `dist` に含めていることですね。
+
+## Author
+
+- [github/hisasann](https://github.com/hisasann)
+- [twitter/hisasann](https://twitter.com/hisasann)
+
+## License
+
+MIT © [hisasann (Yoshiyuki Hisamatsu)](https://github.com/hisasann)
