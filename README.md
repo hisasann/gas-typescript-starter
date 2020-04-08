@@ -2,7 +2,7 @@
 
 Google Apps Script + TypeScript + lerna
 
-## 事前準備
+## Prerequisites
 
 以下のモジュールをインストールしておきます。
 
@@ -21,6 +21,34 @@ $ yarn add global @google/clasp
 ```
 
 [google/clasp: 🔗 Command Line Apps Script Projects](https://github.com/google/clasp)
+
+## Usage
+
+### npm モジュールをインストールする
+
+ルートディレクトリで、 npm モジュールをインストールします。
+
+```bash
+$ yarn install
+```
+
+packages の中のモジュール互換をインストールするために、以下を実行します。
+
+```bash
+$ lerna bootstrap
+```
+
+### GAS にデプロイする
+
+```bash
+$ lerna run gas:push
+```
+
+### GAS を開く
+
+```bash
+$ lerna run gas:open
+```
 
 ## clasp create コマンドを実行する
 
