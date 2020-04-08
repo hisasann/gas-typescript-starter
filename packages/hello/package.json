@@ -2,6 +2,14 @@
   "name": "hello",
   "version": "0.0.0",
   "private": true,
+  "scripts": {
+    "build": "cross-env NODE_ENV=prod rimraf dist/* && tsc && cpx ./appsscript.json dist",
+    "watch": "cross-env NODE_ENV=dev tsc -w",
+    "test": "cross-env NODE_ENV=prod jest",
+    "test:coverage": "cross-env NODE_ENV=prod jest --no-cache --forceExit --coverage",
+    "gas:push": "clasp push -f",
+    "gas:open": "clasp open"
+  },
   "description": "> TODO: description",
   "author": "hisamatsu yoshiyuki <hisasann25@gmail.com>",
   "homepage": "https://github.com/hisasann/gas-typescript-starter#readme",
@@ -18,10 +26,16 @@
     "type": "git",
     "url": "git+https://github.com/hisasann/gas-typescript-starter.git"
   },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
-  },
   "bugs": {
     "url": "https://github.com/hisasann/gas-typescript-starter/issues"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "cpx": "^1.5.0",
+    "cross-env": "^7.0.2",
+    "jest": "^25.2.7",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^25.3.1",
+    "typescript": "^3.8.3"
   }
 }
