@@ -40,14 +40,22 @@ $ lerna bootstrap
 
 ### GAS にデプロイする
 
+lerna や WebStorm からの Run だとうまく動かない。
+
+パス的なのが何か問題になっているのかもしれない。
+
+なので、確実なのは `yarn` 経由で実行すること。
+
 ```bash
-$ lerna run gas:push
+$ cd packages/xxx
+$ yarn gas:push
 ```
 
 ### GAS を開く
 
 ```bash
-$ lerna run gas:open
+$ cd packages/xxx
+$ yarn gas:open
 ```
 
 ## clasp create コマンドを実行する
