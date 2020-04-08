@@ -1,12 +1,12 @@
-# 🍍 gas-typescript-starter - Google Apps Script + TypeScript + lerna 🍔
+# 🍍 gas-typescript-starter 🍩
 
-## 環境設定
+Google Apps Script + TypeScript + lerna
 
-### Prerequisites
+## 事前準備
 
 以下のモジュールをインストールしておきます。
 
-#### google/clasp
+### google/clasp
 
 Using npm,
 
@@ -25,11 +25,14 @@ $ yarn add global @google/clasp
 ## clasp create コマンドを実行する
 
 ```bash
-$ clasp create sample
+$ clasp login
+$ clasp create hello
 Created new script: https://script.google.com/d/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/edit
 Cloned 1 file.
 └─ appsscript.json
 ```
+
+これで `appsscript.json` （プロジェクトのマニフェストファイル）と `clasp.json` が作成されます。
 
 ## clasp open コマンドを実行する
 
@@ -39,6 +42,31 @@ Cloned 1 file.
 $ clasp open
 ```
 
+## clasp.json を編集する
 
+`clasp.json` では、 GAS としてのルートパスを指定できるので、ここに ts のビルド後の .js ファイルが置かれる場所をしてしています。
 
+```
+{
+  "scriptId": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "rootDir": "./dist"
+}
+```
 
+## monorepo の一つのパッケージの最終形態はこちら
+
+    ├── README.md
+    ├── __tests__
+    │   └── hello.test.ts
+    ├── appsscript.json
+    ├── dist
+    │   ├── appsscript.json
+    │   └── hello.js
+    ├── jest.config.js
+    ├── node_modules
+    ├── package.json
+    ├── src
+    │   └── hello.ts
+    └── tsconfig.json
+
+大事なのは、 `appsscript.json` を `dist` に含めていることですね。
