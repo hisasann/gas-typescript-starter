@@ -1,6 +1,10 @@
 # 🍍 gas-typescript-starter 🍩
 
-Google Apps Script + TypeScript + lerna
+## Stack
+
+* [Google Apps Script](https://developers.google.com/gsuite/aspects/appsscript?hl=ja)
+* [TypeScript](https://www.typescriptlang.org/)
+* [lerna](https://github.com/lerna/lerna/tree/master/commands/add#readme)
 
 ## Prerequisites
 
