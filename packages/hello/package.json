@@ -14,7 +14,7 @@
   "author": "hisamatsu yoshiyuki <hisasann25@gmail.com>",
   "homepage": "https://github.com/hisasann/gas-typescript-starter#readme",
   "license": "MIT",
-  "main": "lib/hello.js",
+  "main": "src/index.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hisasann/gas-typescript-starter.git"

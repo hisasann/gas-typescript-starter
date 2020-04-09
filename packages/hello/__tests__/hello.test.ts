@@ -1,4 +1,4 @@
-import { getHello, showHello } from "../src/index";
+import { getHello, showHello } from "../src/hello";
 
 test('hello - getHello', () => {
   const hello = getHello();
