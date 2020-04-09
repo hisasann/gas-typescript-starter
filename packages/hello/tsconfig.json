@@ -1,12 +1,21 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-//    "outDir": "./dist",
+    //    "outDir": "./dist",
     "rootDir": "./src",
     "paths": {
       "*": ["types/*"]
     },
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "types": [
+      "@types/jest",
+      // [@types/google-apps-script] Variable 'console' must be of type 'Console', but here has type 'console'. TS2403 - https://gitmemory.com/issue/DefinitelyTyped/DefinitelyTyped/32585/489331668
+      // [@types/google-apps-script] Variable 'console' must be of type 'Console', but here has type 'console'. TS2403 · Issue #32585 · DefinitelyTyped/DefinitelyTyped - https://github.com/DefinitelyTyped/DefinitelyTyped/issues/32585
+      // @types/node の console と、 @types/google-apps-script の console が型でバッティングしているので、
+      // @types/google-apps-script のほうを有効にしておいた
+      //      "@types/node",
+      "@types/google-apps-script"
+    ]
   },
   "include": ["src/**/*.ts"]
 }
