@@ -7,8 +7,9 @@
     "watch": "cross-env NODE_ENV=dev tsc -w",
     "test": "cross-env NODE_ENV=prod jest",
     "test:coverage": "cross-env NODE_ENV=prod jest --no-cache --forceExit --coverage",
-    "gas:push": "npm run build && clasp push -f",
-    "gas:open": "clasp open"
+    "lint": "prettier . --write --ignore-path ../../.gitignore",
+    "push": "npm run build && clasp push -f",
+    "open": "clasp open"
   },
   "description": "> TODO: description",
   "author": "hisamatsu yoshiyuki <hisasann25@gmail.com>",
@@ -24,10 +25,12 @@
   },
   "devDependencies": {
     "@google/clasp": "^2.3.0",
+    "@types/google-apps-script": "^1.0.11",
     "@types/jest": "^25.2.1",
     "cpx": "^1.5.0",
     "cross-env": "^7.0.2",
     "jest": "^25.2.7",
+    "prettier": "^2.0.4",
     "rimraf": "^3.0.2",
     "ts-jest": "^25.3.1",
     "typescript": "^3.8.3"
