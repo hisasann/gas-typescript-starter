@@ -52,14 +52,14 @@ lerna や WebStorm からの Run だとうまく動かない。
 
 ```bash
 $ cd packages/xxx
-$ yarn gas:push
+$ yarn push
 ```
 
 ### GAS を開く
 
 ```bash
 $ cd packages/xxx
-$ yarn gas:open
+$ yarn open
 ```
 
 ## clasp create コマンドを実行する
@@ -93,6 +93,25 @@ $ clasp open
 }
 ```
 
+## Web アプリとして公開する方法
+
+**doGet** 関数を用意します。
+
+```js
+function doGet() {
+  const template = 'myfunction';    // html ファイル名から拡張子を抜いた文字列
+  return HtmlService.createTemplateFromFile(template).evaluate();
+}
+```
+
+次に、 GAS 上のメニューで「Publish」→「Deploy as web app」を選択します。
+
+表示されるダイアログで `Project version` を **New** を選んでバージョンをインクリメントします。
+
+これをしないと、 `clasp push` したとしても自動的にバージョンアップしてくれないので注意が必要です。
+
+[GASでwebアプリの作成とパラメータの確認方法(doGet、doPost) | BREEZE](https://breezegroup.co.jp/201906/gas-get/)
+
 ## monorepo の一つのパッケージの最終形態はこちら
 
     ├── README.md
@@ -108,8 +127,6 @@ $ clasp open
     ├── src
     │   └── hello.ts
     └── tsconfig.json
-
-大事なのは、 `appsscript.json` を `dist` に含めていることですね。
 
 ## 参考記事
 
