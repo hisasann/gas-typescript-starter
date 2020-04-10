@@ -1,6 +1,7 @@
 import { showHello, getHello } from './hello';
 
-export function myFunction() {
+// myfunction.html から呼び出される関数
+function myFunction() {
   showHello(getHello());
 }
 
