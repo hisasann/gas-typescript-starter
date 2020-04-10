@@ -112,6 +112,12 @@ function doGet() {
 
 [GASでwebアプリの作成とパラメータの確認方法(doGet、doPost) | BREEZE](https://breezegroup.co.jp/201906/gas-get/)
 
+[Google Apps Script でHTMLファイルを作って表示。 - Qiita](https://qiita.com/taromorimotohf/items/5e52cb9062600e8ccac3)
+
+[Google Apps Scriptを使ってサーバーレスファンクションを作る - Qiita](https://qiita.com/hakaicode/items/0e2bc0e5b5e43ca12b42)
+
+## GAS でのマルチファイルについて
+
 ## monorepo の一つのパッケージの最終形態はこちら
 
     ├── README.md
