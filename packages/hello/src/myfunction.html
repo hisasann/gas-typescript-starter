@@ -29,7 +29,9 @@
     <button onClick="google.script.run.createSS()">Create Spread Sheet</button>
 
     <!-- now を alert() する -->
-    <button onClick="google.script.run.withSuccessHandler(showNow).getNow();">Call getNow()</button>
+    <button onClick="google.script.run.withSuccessHandler(showNow).getNow();">
+      Call getNow()
+    </button>
     <script>
       window.showNow = function showNow(arg) {
         alert(`showNow! ${arg}`);

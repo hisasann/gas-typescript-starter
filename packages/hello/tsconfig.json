@@ -17,7 +17,5 @@
       "@types/google-apps-script"
     ]
   },
-  "include": [
-    "src/**/*.ts"
-  ]
+  "include": ["src/**/*.ts"]
 }

@@ -185,6 +185,28 @@ const token = PropertiesService.getScriptProperties().getProperty('TOKEN');
 
 [【初心者向けGAS】スクリプトプロパティを操作してそのデータを取り出す方法](https://tonari-it.com/gas-properties-script-property/)
 
+## GAS でライブラリを使う場合
+
+GAS のメニューから追加することもできるが、それだと `clasp push` されたタイミングでクリアされてしまうので、実用的ではなかった。
+
+代わりに、以下のように `appsscript.json` に追加するのが妥当のようでした。
+
+```json
+{
+  "dependencies": {
+    "libraries": [
+      {
+        "userSymbol": "Moment",
+        "libraryId": "MHMchiX6c1bwSqGM1PZiW_PxhMjh3Sh48",
+        "version": "9"
+      }
+    ]
+  },
+}
+```
+
+[[GAS]Claspでライブラリを使う方法｜kazuya_saito/イデアルファーロ株式会社 CEO｜note](https://note.com/miraisouzoukan/n/n1dd76f67aaf9)
+
 ## monorepo の一つのパッケージの最終形態はこちら
 
     ├── README.md
