@@ -122,6 +122,27 @@ function doGet() {
 
 [Google Apps Script（GAS）のプロジェクト内に複数のスクリプトファイルがある場合の実行順序 - Qiita](https://qiita.com/munieru_jp/items/0119ca5ee38caa23b8e4)
 
+## HTML 側から GAS の関数を実行する方法について
+
+### GAS 側の関数を呼び出す方法
+
+```html
+<button onClick="google.script.run.myFunction()">Call myFunction</button>
+```
+
+### GAS 側の関数を呼び出し、その後コールバック関数を呼び出してもらう方法
+
+```html
+<button onClick="google.script.run.withSuccessHandler(initializer).getSpreadsheetName('hoge')">Call initializer</button>
+<script>
+  window.initializer = function initializer(arg) {
+    console.log(`initialized! ${arg}`);
+  };
+</script>
+```
+
+[GASのWebアプリでクライアント側JavaScriptからサーバー側の関数を呼び出す方法](https://tonari-it.com/gas-web-app-google-script-run/)
+
 ## monorepo の一つのパッケージの最終形態はこちら
 
     ├── README.md

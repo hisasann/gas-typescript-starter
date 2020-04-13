@@ -10,6 +10,13 @@
     <title>Document</title>
   </head>
   <body>
-    <button onClick="google.script.run.myFunction()">myFunction</button>
+    <button onClick="google.script.run.myFunction()">Call myFunction</button>
+
+    <button onClick="google.script.run.withSuccessHandler(initializer).getSpreadsheetName('hoge')">Call initializer</button>
+    <script>
+      window.initializer = function initializer(arg) {
+        console.log(`initialized! ${arg}`);
+      };
+    </script>
   </body>
 </html>
