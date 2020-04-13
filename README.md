@@ -118,6 +118,10 @@ function doGet() {
 
 ## GAS でのマルチファイルについて
 
+    おそらく、サーバー側ではファイル名順にすべてのスクリプトファイルを結合してから、指定した関数を実行しているものと思われます。
+
+[Google Apps Script（GAS）のプロジェクト内に複数のスクリプトファイルがある場合の実行順序 - Qiita](https://qiita.com/munieru_jp/items/0119ca5ee38caa23b8e4)
+
 ## monorepo の一つのパッケージの最終形態はこちら
 
     ├── README.md
