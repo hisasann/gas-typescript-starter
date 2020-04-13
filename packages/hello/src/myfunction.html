@@ -10,13 +10,22 @@
     <title>Document</title>
   </head>
   <body>
+    <!-- GAS 側の関数を呼び出す方法 -->
     <button onClick="google.script.run.myFunction()">Call myFunction</button>
 
-    <button onClick="google.script.run.withSuccessHandler(initializer).getSpreadsheetName('hoge')">Call initializer</button>
+    <!-- GAS 側の関数を呼び出し、その後コールバック関数を呼び出してもらう方法 -->
+    <button
+      onClick="google.script.run.withSuccessHandler(initializer).getSpreadsheetName('hoge')"
+    >
+      Call initializer
+    </button>
     <script>
       window.initializer = function initializer(arg) {
         console.log(`initialized! ${arg}`);
       };
     </script>
+
+    <!-- スプレッドシートを作成する -->
+    <button onClick="google.script.run.createSS()">Create Spread Sheet</button>
   </body>
 </html>
