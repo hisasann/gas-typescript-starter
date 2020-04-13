@@ -143,6 +143,18 @@ function doGet() {
 
 [GASのWebアプリでクライアント側JavaScriptからサーバー側の関数を呼び出す方法](https://tonari-it.com/gas-web-app-google-script-run/)
 
+## 権限まわりでエラーが出た場合
+
+    Exception: No item with the given ID could be found, or you do not have permission to access it.
+    
+以下の記事のように、
+
+「File」->「Project properties」->「Scopes」何もなければ、 OAuth の認証がされていない可能性があります。
+
+その場合は、適当な function を実行して権限を付与するダイアログを出して付与しましょう（この画面もけっこうわかりにくいです）
+
+[GASのエラー”呼び出す権限がありません”はマニフェストファイルに問題あり - Qiita](https://qiita.com/h-sto/items/fdde0905d0a4070d18fc)
+
 ## monorepo の一つのパッケージの最終形態はこちら
 
     ├── README.md
