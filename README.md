@@ -62,6 +62,22 @@ $ cd packages/xxx
 $ yarn open
 ```
 
+## Google Apps Script APIの有効化する
+
+```bash
+$ clasp create hello
+Error: Permission denied. Enable the Apps Script API:
+https://script.google.com/home/usersettings
+```
+
+`clasp create` でエラーがでてしまう場合は、
+
+`https://script.google.com/home/usersettings`
+
+にて、 **オン** にしてあげます。（ぼくはデフォルトはオフでした）
+
+[GAS のGoogle謹製CLIツール clasp - Qiita](https://qiita.com/HeRo/items/4e65dcc82783b2766c03#google-apps-script-api%E3%81%AE%E6%9C%89%E5%8A%B9%E5%8C%96)
+
 ## clasp create コマンドを実行する
 
 ```bash
