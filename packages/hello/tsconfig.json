@@ -4,12 +4,11 @@
     //    "outDir": "./dist",
     "rootDir": "./src",
     "paths": {
-      "*": ["types/*", "types/window"]
+      "*": ["types/*"]
     },
     "baseUrl": "./",
     "types": [
       "@types/jest",
-      "types/window",
       // [@types/google-apps-script] Variable 'console' must be of type 'Console', but here has type 'console'. TS2403 - https://gitmemory.com/issue/DefinitelyTyped/DefinitelyTyped/32585/489331668
       // [@types/google-apps-script] Variable 'console' must be of type 'Console', but here has type 'console'. TS2403 · Issue #32585 · DefinitelyTyped/DefinitelyTyped - https://github.com/DefinitelyTyped/DefinitelyTyped/issues/32585
       // @types/node の console と、 @types/google-apps-script の console が型でバッティングしているので、
@@ -18,5 +17,7 @@
       "@types/google-apps-script"
     ]
   },
-  "include": ["src/**/*.ts"]
+  "include": [
+    "src/**/*.ts"
+  ]
 }

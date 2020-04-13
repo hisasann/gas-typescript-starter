@@ -18,7 +18,7 @@ function getSpreadsheetName(hoge: string) {
   return `${SpreadsheetApp?.getActiveSpreadsheet()?.getName()} ${hoge}`;
 }
 
-function creatSS() {
+function createSS() {
   // スプレッドシートオブジェクトを作成する
   const id = SpreadsheetApp.create('new Spread Sheet').getId();
   // スプレッドシートのファイルオブジェクトを取得する
@@ -49,5 +49,5 @@ function creatSS() {
 
 function getNow() {
   const now = Moment.moment();
-  window.alert(now.format('YYYY年MM月DD日'));
+  return now.format('YYYY年MM月DD日');
 }
