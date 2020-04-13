@@ -171,6 +171,20 @@ function doGet() {
 
 [GASのエラー”呼び出す権限がありません”はマニフェストファイルに問題あり - Qiita](https://qiita.com/h-sto/items/fdde0905d0a4070d18fc)
 
+## 環境変数の使い方
+
+ハードコードしないほうがよさそうなものは、 **Script properties** （環境変数）を使いましょう。
+
+「File」->「Project properties」->「Script properties」こちらに KeyValue を入れます。
+
+```javascript
+const token = PropertiesService.getScriptProperties().getProperty('TOKEN');
+```
+
+[GASをClaspとTypescriptでローカル開発してみた。(Clasp / Typescript / TSLint / Prettier)](https://medium.com/@kosa3/gas%E3%82%92clasp%E3%81%A8typescript%E3%81%A7%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%AB%E9%96%8B%E7%99%BA%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F-e7835d1763ed)
+
+[【初心者向けGAS】スクリプトプロパティを操作してそのデータを取り出す方法](https://tonari-it.com/gas-properties-script-property/)
+
 ## monorepo の一つのパッケージの最終形態はこちら
 
     ├── README.md
