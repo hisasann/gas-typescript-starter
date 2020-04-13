@@ -22,7 +22,7 @@ jobs:
           yarn
       - name: lerna bootstrap
         run: |
-          lerna bootstrap
+          yarn lerna bootstrap
       - name: test
         run: |
-          lerna run test
+          yarn lerna run test
