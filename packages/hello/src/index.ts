@@ -1,4 +1,5 @@
 import { showHello, getHello } from './hello';
+import { Moment } from 'moment';
 
 // HTTP GETによる実行エントリポイント
 // Google Apps Script でHTMLファイルを作って表示。 - Qiita - https://qiita.com/taromorimotohf/items/5e52cb9062600e8ccac3
@@ -28,7 +29,11 @@ function creatSS() {
   // の部分です。
   // Google Apps ScriptでGoogleドライブを操作する最も簡単なスクリプト - https://tonari-it.com/gas-google-drive-app/
   // スプレッドシートの移動先となるフォルダー名（環境変数より取得）
-  const GAS_FOLDER_ID: string | null = PropertiesService.getScriptProperties().getProperty('GAS_FOLDER_ID');
+  const GAS_FOLDER_ID:
+    | string
+    | null = PropertiesService.getScriptProperties().getProperty(
+    'GAS_FOLDER_ID'
+  );
 
   let folder;
   if (GAS_FOLDER_ID) {
@@ -40,4 +45,9 @@ function creatSS() {
 
     console.log(folder.getName());
   }
+}
+
+function getNow() {
+  const now = Moment.moment();
+  window.alert(now.format('YYYY年MM月DD日'));
 }

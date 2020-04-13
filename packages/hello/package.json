@@ -16,6 +16,7 @@
   "homepage": "https://github.com/hisasann/gas-typescript-starter#readme",
   "license": "MIT",
   "main": "src/index.ts",
+  "types": "types/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hisasann/gas-typescript-starter.git"
