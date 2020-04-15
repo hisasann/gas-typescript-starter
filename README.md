@@ -26,6 +26,22 @@ $ yarn add global @google/clasp
 
 [google/clasp: 🔗 Command Line Apps Script Projects](https://github.com/google/clasp)
 
+### lerna
+
+Using npm,
+
+```bash
+$ npm install -g lerna
+```
+
+Using yarn,
+
+```bash
+$ yarn add global lerna
+```
+
+[lerna/lerna: A tool for managing JavaScript projects with multiple packages.](https://github.com/lerna/lerna)
+
 ## Usage
 
 ### npm モジュールをインストールする
