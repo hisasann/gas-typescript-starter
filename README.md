@@ -58,6 +58,14 @@ packages の中のモジュール互換をインストールするために、�
 $ lerna bootstrap
 ```
 
+### lerna パッケージを作成する
+
+一般公開する npm module ではないので `private: true` で作成します。
+
+```bash
+lerna create hello --private
+```
+
 ### GAS にデプロイする
 
 lerna や WebStorm からの Run だとうまく動かない。
