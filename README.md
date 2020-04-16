@@ -231,6 +231,28 @@ GAS のメニューから追加することもできるが、それだと `clasp
 
 [[GAS]Claspでライブラリを使う方法｜kazuya_saito/イデアルファーロ株式会社 CEO｜note](https://note.com/miraisouzoukan/n/n1dd76f67aaf9)
 
+## Google Form で送信されたときに自動返信メールを送る方法
+
+基本的には、以下のように `GmailApp.sendEmail` するのだが、問題は Google Form が送られてきたタイミングに Hook する方法です。
+
+```javascript
+GmailApp.sendEmail(送信先アドレス, 件名, 本文, オプション)
+```
+
+[Google Apps Scriptでフォーム送信時にメッセージを送るスクリプトの作り方](https://tonari-it.com/gas-on-form-submit-gmail/)
+
+    Google Form -> Google Apps Scripts -> Trigger（ここで Form と GAS を紐付け）
+
+で作る場合は、 Trigger の部分に Google Form に Hook するプルダウンが出てきますが、 GAS を `clasp push` の場合はでこなかったです。
+
+なので、スクリプト側からトリガーを作りました。
+
+```javascript
+ScriptApp.newTrigger(callbackName).forForm(form).onFormSubmit().create();
+```
+
+[[GAS]スクリプトからトリガーをセットする話 - Qiita](https://qiita.com/s_maeda_fukui/items/2fcbd34d7db5e8e7a2b8)
+
 ## monorepo の一つのパッケージの最終形態はこちら
 
     ├── README.md
