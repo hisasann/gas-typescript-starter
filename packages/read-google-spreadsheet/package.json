@@ -1,0 +1,38 @@
+{
+  "name": "read-google-spreadsheet",
+  "version": "0.0.0",
+  "private": true,
+  "description": "> TODO: description",
+  "scripts": {
+    "build": "cross-env NODE_ENV=prod tsc --noEmit",
+    "watch": "cross-env NODE_ENV=dev tsc -w",
+    "test": "cross-env NODE_ENV=prod jest",
+    "test:coverage": "cross-env NODE_ENV=prod jest --no-cache --forceExit --coverage",
+    "lint": "prettier . --write --ignore-path ../../.gitignore",
+    "push": "npm run lint && npm run build && npm run test && clasp push -f && npm run open",
+    "open": "clasp open"
+  },
+  "author": "hisamatsu yoshiyuki <hisasann25@gmail.com>",
+  "homepage": "https://github.com/hisasann/gas-typescript-starter#readme",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hisasann/gas-typescript-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hisasann/gas-typescript-starter/issues"
+  },
+  "devDependencies": {
+    "@google/clasp": "^2.3.0",
+    "@types/google-apps-script": "^1.0.11",
+    "@types/jest": "^25.2.1",
+    "cpx": "^1.5.0",
+    "cross-env": "^7.0.2",
+    "jest": "^25.2.7",
+    "prettier": "^2.0.4",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^25.3.1",
+    "typescript": "^3.8.3"
+  }
+}
