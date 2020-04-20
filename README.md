@@ -253,6 +253,26 @@ ScriptApp.newTrigger(callbackName).forForm(form).onFormSubmit().create();
 
 [[GAS]スクリプトからトリガーをセットする話 - Qiita](https://qiita.com/s_maeda_fukui/items/2fcbd34d7db5e8e7a2b8)
 
+## GAS のクライアントサイドで CSS と JavaScript を実行する方法
+
+---
+
+GAS の doGet で Web アプリとして使われる `main.html`
+
+main.html から `HtmlService.createHtmlOutputFromFile('css').getContent();` 経由で呼び出される CSS ファイルの `css.html`
+
+と JavaScript ファイルの `js.html`
+
+---
+
+これで、 main.html 内から css.html と js.html の中身を include することができます。
+
+[Google Apps ScriptのWebアプリケーションにCSSでスタイル設定をする](https://tonari-it.com/gas-html-css/)
+
+[GASでクライアントJavaScriptを使用する超簡単なプログラム](https://tonari-it.com/gas-button-event-javascript/)
+
+[GASとJavaScriptフレームワークVue.jsを使ってWebアプリを作成するための最初の一歩](https://tonari-it.com/gas-web-app-vue-js/)
+
 ## monorepo の一つのパッケージの最終形態はこちら
 
     ├── README.md
