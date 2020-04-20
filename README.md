@@ -231,6 +231,12 @@ GAS のメニューから追加することもできるが、それだと `clasp
 
 [[GAS]Claspでライブラリを使う方法｜kazuya_saito/イデアルファーロ株式会社 CEO｜note](https://note.com/miraisouzoukan/n/n1dd76f67aaf9)
 
+## GAS を API として JSON を返す方法
+
+[🥔 feat: add read-google-spreadsheet · hisasann/gas-typescript-starter@962e45b](https://github.com/hisasann/gas-typescript-starter/commit/962e45b927467ea108f48e2b92f429a46e5b1a6e)
+
+doGet のレスポンスを **JSON** にすることで対応可能。
+
 ## Google Form で送信されたときに自動返信メールを送る方法
 
 基本的には、以下のように `GmailApp.sendEmail` するのだが、問題は Google Form が送られてきたタイミングに Hook する方法です。
@@ -254,6 +260,8 @@ ScriptApp.newTrigger(callbackName).forForm(form).onFormSubmit().create();
 [[GAS]スクリプトからトリガーをセットする話 - Qiita](https://qiita.com/s_maeda_fukui/items/2fcbd34d7db5e8e7a2b8)
 
 ## GAS のクライアントサイドで CSS と JavaScript を実行する方法
+
+[🍵 feat: add to use css and js in html with gas · hisasann/gas-typescript-starter@f11b8e6](https://github.com/hisasann/gas-typescript-starter/commit/f11b8e679bfff2c04ae7946e2b89d86f42069527)
 
 ---
 
