@@ -285,6 +285,48 @@ main.html から `HtmlService.createHtmlOutputFromFile('css').getContent();` 経
 
 [GASとJavaScriptフレームワークVue.jsを使ってWebアプリを作成するための最初の一歩](https://tonari-it.com/gas-web-app-vue-js/)
 
+## GAS で Spreadsheet の値を絞り込む
+
+```javascript
+function myFunction() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();　//アクティブなスプレッドシートを取得
+  var sh = ss.getActiveSheet();　//アクティブなスプレッドシートのアクティブシートを取得
+  
+  var filter = sh.getFilter();
+  if (filter !== null) {
+    sh.getFilter().remove(); //フィルタをオフにする
+  }
+
+  sh.getRange(1,1,5,2).createFilter();
+
+  var filterRange = sh.getRange(2,1,sh.getLastRow(),1).getValues();
+  var hidden = getHiddenValueArray(filterRange, 'テスト2');
+  
+  var criteria = SpreadsheetApp.newFilterCriteria()
+// .setVisibleValues(['テスト1','テスト3'])
+  .setHiddenValues(hidden)
+  .build();
+
+  sh.getFilter().setColumnFilterCriteria(1, criteria);
+}
+
+function getHiddenValueArray(colValueArr,visibleValueArr){
+  var flatUniqArr = colValueArr.map(function(e){return e[0];})
+  .filter(function(e,i,a){return (a.indexOf(e.toString())==i && visibleValueArr.indexOf(e.toString()) ==-1); })
+  return flatUniqArr;
+}
+```
+
+`setVisibleValues` 関数がググるとよく出てくるが、どうやらこちらは今はサポートされていないようです。
+
+かわりに、 `setHiddenValues` 関数で非表示にしたいデータ分値を配列で渡す必要があります。
+
+    Exception: Visible values are not currently supported. As an alternative specify a list of hidden values that excludes the values that should be visible. (line 17, file "Code")
+    
+[google apps script - Apply basic filter to multiple values in a spreadsheet column - Stack Overflow](https://stackoverflow.com/questions/51497982/apply-basic-filter-to-multiple-values-in-a-spreadsheet-column)
+
+[【初心者向けGAS】スプレッドシートのセル範囲を行数・列数を使って取得する](https://tonari-it.com/gas-getrange-row-column/)
+
 ## monorepo の一つのパッケージの最終形態はこちら
 
     ├── README.md
