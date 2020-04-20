@@ -237,6 +237,10 @@ GAS のメニューから追加することもできるが、それだと `clasp
 
 doGet のレスポンスを **JSON** にすることで対応可能。
 
+## 複数の Google Form からの送信をひとつの Google Spreadsheet にまとめてシートわける方法
+
+Spreadsheet を Create せずに Select する方法を使うといけました。
+
 ## Google Form で送信されたときに自動返信メールを送る方法
 
 基本的には、以下のように `GmailApp.sendEmail` するのだが、問題は Google Form が送られてきたタイミングに Hook する方法です。
