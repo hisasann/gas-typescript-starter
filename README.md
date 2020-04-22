@@ -327,20 +327,114 @@ function getHiddenValueArray(colValueArr,visibleValueArr){
 
 [【初心者向けGAS】スプレッドシートのセル範囲を行数・列数を使って取得する](https://tonari-it.com/gas-getrange-row-column/)
 
-## monorepo の一つのパッケージの最終形態はこちら
+## GAS で G Suite メールアドレスを取得して閲覧制限のやり方
+
+## Web アプリとして公開するときの設定
+
+<p align="center">
+  <img src="https://github.com/hisasann/gas-typescript-starter/blob/master/internals/images/%E3%83%A1%E3%83%BC%E3%83%AB%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E5%8F%96%E5%BE%972.png?raw=true" alt="" width="50%">
+</p>
+
+[【GAS Webアプリ】ホワイトリストを使ってWebページのアクセス制御する - Qiita](https://qiita.com/merarli/items/143eb3324325c76e22bc)
+
+`Session.getActiveUser().getEmail()` でログインしているユーザーのメールアドレスが取得できるのですが、自分としてアプリケーションを実行するにした場合、
+
+どうやってもメールアドレスが取得できませんでした。
+
+なので、アクセスしたユーザーとして実行にしました。
+
+また、 GAS やユーザー一覧を記載している Google Spreadsheet などは見れる状態にしないと実行できないので、そちらもやらなければなりません。
+
+ですが、
+
+    these restrictions generally do not apply if the developer runs the script themselves or belongs to the same G Suite domain as the user.
+ 
+ [Class Session  |  Apps Script  |  Google Developers](https://developers.google.com/apps-script/reference/base/session#getActiveUser())
+ 
+ と書いてあるので、 `G Suiteドメイン` が同じであれば制限はもう少し緩いのかもしれません。
+
+### Code.gs
+
+```javascript
+function doGet() {
+  // 現在ログインしているユーザーのメールアドレスを取得
+  const LOGIN_USER = Session.getActiveUser().getEmail();
+
+  console.log(LOGIN_USER);
+  
+  let template = 'error';
+  // ログインしているユーザーのメールアドレスを使ってアクセス権を確認
+  if (LOGIN_USER === 'hoge@gmail.com' || LOGIN_USER === 'fuga@gmail.com') {
+    template = 'index';
+  }
+  
+  return HtmlService.createTemplateFromFile(template).evaluate();
+}
+```
+
+### appsscript.json
+
+```json
+{
+  "timeZone": "Asia/Tokyo",
+  "dependencies": {
+  },
+  "webapp": {
+    "access": "ANYONE",
+    "executeAs": "USER_DEPLOYING"
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "oauthScopes": ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/userinfo.email"],
+  "runtimeVersion": "V8"
+}
+```
+
+### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    見えて良い
+  </body>
+</html>
+```
+
+### error.html
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    見えちゃだめ
+  </body>
+</html>
+```
+
+[google apps script - getActiveUser() doesn't return the user? - Stack Overflow](https://stackoverflow.com/questions/57847178/getactiveuser-doesnt-return-the-user)
+
+[Authorization Scopes  |  Apps Script  |  Google Developers](https://developers.google.com/apps-script/concepts/scopes#setting_explicit_scopes)
+
+[アカウントにアクセスできるアプリ](https://myaccount.google.com/permissions)
+
+## GAS 対応した monorepo の一つのパッケージの最終形態はこちら
 
     ├── README.md
     ├── __tests__
     │   └── hello.test.ts
-    ├── appsscript.json
-    ├── dist
-    │   ├── appsscript.json
-    │   └── hello.js
     ├── jest.config.js
     ├── node_modules
     ├── package.json
     ├── src
+    │   ├── appsscript.json
     │   └── hello.ts
+    ├── .clasp.json
     └── tsconfig.json
 
 ## 参考記事
