@@ -423,6 +423,56 @@ function doGet() {
 
 [アカウントにアクセスできるアプリ](https://myaccount.google.com/permissions)
 
+## GAS から HTTP POST する方法
+
+```javascript
+function myFunction() {
+  var message = 'google apps scriptより';
+  sendHttpPost(message);
+}
+
+/*
+* messageをpostする関数
+*/
+function sendHttpPost(message) {
+  var payload =
+    {
+      'message': message,
+    };
+
+  var options =
+    {
+      'method': 'post',
+      'payload': payload,
+    };
+
+  try {
+    // httpbin.org - https://httpbin.org/
+    const res = UrlFetchApp.fetch('https://httpbin.org/post', options);
+    const status = res.getResponseCode();
+    console.log(status);
+  } catch (e) {
+    console.log(e);
+  }
+}
+```
+
+[Google Apps ScriptからHTTP POST - Qiita](https://qiita.com/n0bisuke/items/a31a99232e50461eb00f)
+
+`UrlFetchApp.fetch` に関しては以下のドキュメントを参考。
+
+[Class UrlFetchApp  |  Apps Script  |  Google Developers](https://developers.google.com/apps-script/reference/url-fetch/url-fetch-app)
+
+`fetch` エラーだが
+
+1. 成功した
+1. 失敗した（catch に入る）
+1. http status が 200 かどうか
+
+の3種類をカバーする必要があるようだ。以下を参照。
+
+[UrlFetchApp.fetchの応答3種 タイムアウトがつらい - Qiita](https://qiita.com/khsk/items/7d90513c88559e3d703f)
+
 ## GAS 対応した monorepo の一つのパッケージの最終形態はこちら
 
     ├── README.md
