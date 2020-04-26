@@ -473,6 +473,22 @@ function sendHttpPost(message) {
 
 [UrlFetchApp.fetchの応答3種 タイムアウトがつらい - Qiita](https://qiita.com/khsk/items/7d90513c88559e3d703f)
 
+## Google Spreadsheet のメニューにオリジナルメニューを追加する
+
+```javascript
+function onOpen() {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet();
+  var items = [
+    {name: 'こんにちは', functionName: 'myfunction'}
+  ];
+  sheet.addMenu('こんばんは', items);
+}
+    
+function myfunction() {
+  console.log('はい、こんにちは');
+}
+```
+
 ## GAS 対応した monorepo の一つのパッケージの最終形態はこちら
 
     ├── README.md
