@@ -2,7 +2,6 @@
   "name": "gas-typescript-starter",
   "version": "0.0.1",
   "private": true,
-  "main": "index.js",
   "scripts": {
     "lerna-init": "lerna init"
   },
